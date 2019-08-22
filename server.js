@@ -2,14 +2,18 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-const UsersModel = require("./users-model");
+const UsersModel = require("./queries/users-model");
 const secret = require("./secret");
+
+// const authRouter = require('./router/users-router.js');
+// server.use('/api/router', authRouter);
 
 const server = express();
 
 server.use(express.json());
 
-// =============== TEST ===============
+
+// // =============== TEST ===============
 server.get("/", (req, res) => {
   res.send("Hello from GET /");
 });
